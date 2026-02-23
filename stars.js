@@ -1,69 +1,68 @@
-// reusable animated star background
+const container = document.getElementById("dot-container");
 
-(function () {
+const STAR_COUNT = 80;
+const MIN_SIZE = 5;
+const MAX_SIZE = 15;
 
-  const existing = document.getElementById("dot-container");
-  if (existing) existing.remove();
+let stars = [];
 
-  const container = document.createElement("div");
-  container.id = "dot-container";
-  container.style.position = "fixed";
-  container.style.top = "0";
-  container.style.left = "0";
-  container.style.width = "100%";
-  container.style.height = "100%";
-  container.style.pointerEvents = "none";
-  container.style.zIndex = "-1";
-  container.style.willChange = "transform";
+function createStars() {
+  container.innerHTML = "";
+  stars = [];
 
-  document.body.appendChild(container);
+  for (let i = 0; i < STAR_COUNT; i++) {
 
-  const STAR_COUNT = 70;
-  const stars = [];
-
-  function createStar() {
     const star = document.createElement("div");
-    const size = Math.random() * 10 + 5;
+    star.classList.add("dot");
 
-    star.style.position = "absolute";
-    star.style.borderRadius = "50%";
-    star.style.background = "white";
+    const size = randomBetween(MIN_SIZE, MAX_SIZE);
+
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+
     star.style.width = size + "px";
     star.style.height = size + "px";
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.top = Math.random() * 200 + "vh";
-    star.style.opacity = Math.random() * 0.5 + 0.3; // capped at 0.8
-    star.style.transition = "opacity 2s ease-in-out";
+    star.style.left = x + "px";
+    star.style.top = y + "px";
 
     container.appendChild(star);
-    stars.push(star);
-  }
 
-  function twinkle() {
-    stars.forEach(star => {
-      const newOpacity = Math.random() * 0.5 + 0.3;
-      star.style.opacity = newOpacity;
+    stars.push({
+      el: star,
+      baseSize: size,
+      twinkleSpeed: randomBetween(0.002, 0.006),
+      phase: Math.random() * Math.PI * 2
     });
   }
+}
 
-  function init() {
-    for (let i = 0; i < STAR_COUNT; i++) {
-      createStar();
-    }
+function animateStars() {
+  stars.forEach(star => {
 
-    setInterval(twinkle, 3000);
-  }
+    star.phase += star.twinkleSpeed;
 
-  window.addEventListener("scroll", () => {
-    container.style.transform = `translateY(${window.scrollY * 0.15}px)`;
+    // Smooth sinusoidal opacity
+    const opacity = 0.4 + Math.sin(star.phase) * 0.4;
+    star.el.style.opacity = Math.min(opacity, 0.8);
+
+    // Subtle size pulse
+    const scale = 0.9 + Math.sin(star.phase) * 0.1;
+    star.el.style.transform = `scale(${scale})`;
   });
 
-  window.addEventListener("resize", () => {
-    container.innerHTML = "";
-    stars.length = 0;
-    init();
-  });
+  requestAnimationFrame(animateStars);
+}
 
-  init();
+function randomBetween(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
-})();
+createStars();
+animateStars();
+
+window.addEventListener("resize", createStars);
+
+// subtle parallax (calm)
+window.addEventListener("scroll", () => {
+  container.style.transform = `translateY(${window.scrollY * 0.1}px)`;
+});
