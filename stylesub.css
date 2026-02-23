@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>art</title>
+<link rel="stylesheet" href="stylesub.css">
+</head>
+<body>
+
+<div id="dot-container"></div>
+
+<header>
+<h1>olivia mei</h1>
+<nav>
+<a href="index.html">home</a>
+<a href="index.html#projects">projects</a>
+</nav>
+</header>
+
+<section>
+<h2>art</h2>
+
+<div class="timeline">
+
+<div class="timeline-node">
+<h3>water color</h3>
+</div>
+
+<div class="timeline-node">
+<h3>sketch</h3>
+</div>
+
+<div class="timeline-node">
+<h3>sculpture</h3>
+</div>
+
+<div class="timeline-node">
+<h3>flower arranging</h3>
+</div>
+
+</div>
+</section>
+
+<script src="stars.js"></script>
+
+</body>
+</html>
