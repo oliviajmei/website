@@ -5,6 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>igvc</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.project-hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.project-hero-image img {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.timeline-media {
+  display: flex;
+  align-items: center;
+}
+
+.node-right .timeline-media {
+  justify-content: flex-start;
+}
+
+.node-left .timeline-media {
+  justify-content: flex-end;
+}
+
+.timeline-media img,
+.multi-image {
+  width: 100%;
+  max-width: 420px;
+}
+
+.multi-image {
+  display: grid;
+  gap: 18px;
+}
+
+.multi-image img {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .project-hero-image img,
+  .timeline-media img,
+  .multi-image {
+    max-width: 100%;
+  }
+
+  .timeline-media {
+    justify-content: flex-start;
+  }
+}
+</style>
 </head>
 <body>
 
