@@ -297,7 +297,7 @@ footer a:hover {
 .timeline-alternating .timeline-node {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 70px;
+  column-gap: 20px;
   align-items: center;
   margin-bottom: 100px;
 }
@@ -359,7 +359,7 @@ footer a:hover {
 }
 
 .node-left .timeline-copy .project-card {
-  margin-left: auto;
+  margin-left: 10;
 }
 
 .timeline-copy .project-card {
