@@ -4,43 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>uc '26</title>
-<link rel="stylesheet" href="stylesub.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.project-hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.project-hero-image img {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.timeline-media {
+  display: flex;
+  align-items: center;
+}
+
+.node-right .timeline-media {
+  justify-content: flex-start;
+}
+
+.node-left .timeline-media {
+  justify-content: flex-end;
+}
+
+.timeline-media img,
+.multi-image {
+  width: 100%;
+  max-width: 420px;
+}
+
+.multi-image {
+  display: grid;
+  gap: 18px;
+}
+
+.multi-image img {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .project-hero-image img,
+  .timeline-media img,
+  .multi-image {
+    max-width: 100%;
+  }
+
+  .timeline-media {
+    justify-content: flex-start;
+  }
+}
+</style>
 </head>
 <body>
 
+<div id="dot-container"></div>
+
 <header>
+  <h1>olivia mei</h1>
   <nav>
     <a href="index.html">home</a>
     <a href="index.html#projects">projects</a>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>uc '26</h1>
-  <div class="hero-content">
-    <div class="hero-text">
-      <h3>contributions to mechanical design for cornell electric vehicles urban concept '26 vehicle</h3>
-    </div>
-    <div class="hero-image">
-      <img src="images/uc26.jpg" alt="uc26">
-    </div>
+<section class="project-hero">
+  <div class="project-hero-text">
+    <h1>uc '26</h1>
+    <h2>solar vehicle mechanical systems</h2>
+    <p>development of steering and actuation subsystems for the 2026 vehicle, including a custom rack and pinion housing and an autonomous braking system.</p>
+  </div>
+
+  <div class="project-hero-image">
+    <img src="images/uc26.jpg" alt="uc 26 project hero image">
   </div>
 </section>
 
-<section class="timeline">
-  <div class="timeline-item">
-    <h3>autosteer (uc '25)</h3>
-    <p>summer project, rapid prototyped new gearbox and motor mounts to decrease overall footprint and improve electromechanical integration</p>
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>design timeline</h2>
+    <p>a breakdown of key subsystem designs developed for uc '26.</p>
   </div>
-  <div class="timeline-item">
-    <h3>autobrake</h3>
-    <p>last semester project designed to optimize and iterate on pre-existing components to better integrate with new design changes to overall vehicle</p>
-  </div>
-  <div class="timeline-item">
-    <h3>rack and pinion housing</h3>
-    <p>additional design project critical for steering system and first drive which tested dfm and was also my first manual mill project</p>
+
+  <div class="timeline timeline-alternating">
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media multi-image">
+        <img src="images/uc26-rack-pinion-1.png" alt="custom rack and pinion housing design with machining callouts">
+        <img src="images/uc26-rack-pinion-2.png" alt="custom rack and pinion housing assembly with shaft and bushing callouts">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="timeline-content project-card">
+          <h3>rack and pinion housing</h3>
+          <p>custom steering housing designed around manufacturability and subsystem packaging. the housing was manually milled from aluminum and integrated with a hand-lathed shaft and 3d printed bushings to support the pinion assembly and rack travel.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-node node-left">
+      <div class="timeline-side timeline-copy">
+        <div class="timeline-content project-card">
+          <h3>autonomous braking system</h3>
+          <p>compact braking actuation package integrating a gearbox, bearings, electromagnetic clutch, and 3d printed motor mount. the assembly was designed to deliver controlled braking through a toleranced packaged system with serviceable components.</p>
+        </div>
+      </div>
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc26-autobrake.png" alt="autonomous braking system assembly with gearbox, clutch, and motor mount">
+      </div>
+    </article>
   </div>
 </section>
 
-</body>
-</html>
+<footer>
+  <p>lin
