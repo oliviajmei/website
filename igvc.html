@@ -1,54 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>igvc</title>
-<link rel="stylesheet" href="stylesub.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>igvc</title>
+  <style>
+    :root {
+      --bg: #0d2742;
+      --bg-soft: #112f4f;
+      --text: #f5f5f2;
+      --muted: #c8d2df;
+      --accent: #d8b16d;
+      --line: rgba(245, 245, 242, 0.18);
+      --card: rgba(255, 255, 255, 0.04);
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+      --max-width: 1200px;
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    header {
+      width: 100%;
+      padding: 1.4rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(13, 39, 66, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: flex-start;
+      align-items: center;
+      text-transform: lowercase;
+      letter-spacing: 0.06em;
+    }
+
+    nav a {
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      text-transform: lowercase;
+      line-height: 0.95;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text h3 {
+      font-size: clamp(1.15rem, 2vw, 1.65rem);
+      font-weight: 500;
+      color: var(--muted);
+      max-width: 26rem;
+    }
+
+    .hero-image img,
+    .overview-image img,
+    .timeline-photo img {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+    }
+
+    .overview {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem 2rem;
+    }
+
+    .overview-image {
+      width: 100%;
+    }
+
+    .overview-image img {
+      max-height: 720px;
+      object-fit: cover;
+    }
+
+    .timeline-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 4rem 2rem 7rem;
+    }
+
+    .timeline-heading {
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 0.75rem;
+      text-transform: lowercase;
+    }
+
+    .timeline-heading p {
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 5rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom, transparent 0%, var(--accent) 8%, var(--accent) 92%, transparent 100%);
+      opacity: 0.95;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 90px 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 22px;
+      height: 22px;
+      transform: translate(-50%, -50%);
+      background: var(--bg);
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      z-index: 2;
+      box-shadow: 0 0 0 10px rgba(216, 177, 109, 0.08);
+    }
+
+    .timeline-card,
+    .timeline-photo {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-card h3 {
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      text-transform: lowercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .timeline-card p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 34rem;
+    }
+
+    .timeline-card .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    .timeline-photo-stack {
+      display: grid;
+      gap: 1rem;
+      height: 100%;
+    }
+
+    .timeline-photo-stack img {
+      height: 100%;
+      min-height: 220px;
+    }
+
+    .timeline-photo.single img {
+      min-height: 320px;
+    }
+
+    .timeline-item.left .timeline-photo {
+      grid-column: 1;
+    }
+
+    .timeline-item.left .timeline-card {
+      grid-column: 3;
+    }
+
+    .timeline-item.right .timeline-card {
+      grid-column: 1;
+      text-align: right;
+      align-items: flex-end;
+    }
+
+    .timeline-item.right .timeline-card p {
+      text-align: right;
+    }
+
+    .timeline-item.right .timeline-photo {
+      grid-column: 3;
+    }
+
+    @media (max-width: 960px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 22px;
+        transform: none;
+      }
+
+      .timeline-item {
+        grid-template-columns: 44px 1fr;
+        gap: 1.2rem;
+        align-items: start;
+      }
+
+      .timeline-item::before {
+        left: 22px;
+        top: 1.5rem;
+        transform: translate(-50%, 0);
+      }
+
+      .timeline-item.left .timeline-photo,
+      .timeline-item.left .timeline-card,
+      .timeline-item.right .timeline-photo,
+      .timeline-item.right .timeline-card {
+        grid-column: 2;
+      }
+
+      .timeline-item.right .timeline-card,
+      .timeline-item.right .timeline-card p {
+        text-align: left;
+        align-items: flex-start;
+      }
+
+      .timeline-photo,
+      .timeline-card {
+        min-height: unset;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header,
+      .hero,
+      .overview,
+      .timeline-section {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .timeline {
+        gap: 3rem;
+      }
+
+      .timeline-card,
+      .timeline-photo {
+        padding: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <a href="index.html">home</a>
+      <a href="index.html#projects">projects</a>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <a href="index.html">home</a>
-    <a href="index.html#projects">projects</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>igvc</h1>
-  <div class="hero-content">
-    <div class="hero-text">
-      <h3>autonomous ground vehicle competition</h3>
+  <section class="hero">
+    <h1>igvc</h1>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h3>autonomous ground vehicle competition</h3>
+      </div>
+      <div class="hero-image">
+        <img src="images/igvc.jpg" alt="IGVC project overview hero image">
+      </div>
     </div>
-    <div class="hero-image">
-      <img src="images/igvc.jpg" alt="igvc">
+  </section>
+
+  <section class="overview">
+    <div class="overview-image">
+      <img src="images/igvc-overall-robot.png" alt="Overall CAD view of the IGVC robot">
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="timeline">
-  <div class="timeline-item">
-    <h3>overall design</h3>
-    <p>overall design containing chassis, drivetrain, and steering mechanisms</p>
-  </div>
-  <div class="timeline-item">
-    <h3>drivetrain</h3>
-    <p>modular aluminum mounts designed for dfm and dfa, hand machined on manual mill</p>
-  </div>
-  <div class="timeline-item">
-    <h3>chassis</h3>
-    <p>made out of 80/20s for easy modularity, rapid prototyping, and durability with acrylic casing</p>
-  </div>
-  <div class="timeline-item">
-    <h3>steering</h3>
-    <p>utilizes ackerman steering to simulate real vehicle (uc '26) steering with custom rack and pinion housing, tie rods, and steer knuckle design</p>
-  </div>
-  <div class="timeline-item">
-    <h3>sensor mounts</h3>
-    <p>designed to hold zed2 camera and helio lidar</p>
-  </div>
-</section>
+  <section class="timeline-section">
+    <div class="timeline-heading">
+      <h2>design timeline</h2>
+      <p>Breakdown of the major mechanical systems developed for the IGVC platform, with alternating descriptions and visual callouts for each subsystem.</p>
+    </div>
 
+    <div class="timeline">
+      <article class="timeline-item left">
+        <div class="timeline-photo">
+          <div class="timeline-photo-stack">
+            <img src="images/igvc-chassis-1.png" alt="IGVC chassis side and top layout">
+            <img src="images/igvc-chassis-2.png" alt="IGVC chassis acrylic enclosure view">
+          </div>
+        </div>
+        <div class="timeline-card">
+          <span class="eyebrow">node 01</span>
+          <h3>chassis design</h3>
+          <p>Built from 80/20 extrusion for modularity, quick iteration, and durable subsystem mounting. The layered base structure separates payload, battery, and electrical systems while leaving room for an acrylic outer enclosure and future hardware changes.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item right">
+        <div class="timeline-card">
+          <span class="eyebrow">node 02</span>
+          <h3>drivetrain</h3>
+          <p>Direct-drive wheel layout using custom motor mounts designed around manufacturability and clean packaging. This subsystem supports a compact drive architecture while keeping assembly straightforward and serviceable.</p>
+        </div>
+        <div class="timeline-photo single">
+          <img src="images/igvc-drivetrain.png" alt="IGVC drivetrain assembly with custom motor mounts">
+        </div>
+      </article>
+
+      <article class="timeline-item left">
+        <div class="timeline-photo single">
+          <img src="images/igvc-steering.png" alt="IGVC steering system with rack, pinion, tie rods, and custom knuckles">
+        </div>
+        <div class="timeline-card">
+          <span class="eyebrow">node 03</span>
+          <h3>steering system</h3>
+          <p>Ackermann-inspired steering geometry with a custom housing, bushings, tie rods, and steering knuckles. The layout was developed to better emulate real vehicle steering behavior while staying manufacturable for a student-built autonomous platform.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item right">
+        <div class="timeline-card">
+          <span class="eyebrow">node 04</span>
+          <h3>sensor mounts</h3>
+          <p>Dedicated 3D-printed mounts designed to package the ZED2 camera and Helios LiDAR cleanly onto the chassis. The mounts prioritize stable alignment, simple fastening, and fast replacement during testing and iteration.</p>
+        </div>
+        <div class="timeline-photo single">
+          <img src="images/igvc-sensor-mounts.png" alt="3D-printed LiDAR and camera mounts for IGVC robot sensors">
+        </div>
+      </article>
+    </div>
+  </section>
 </body>
 </html>
