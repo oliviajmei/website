@@ -6,8 +6,13 @@
 <title>uc '26</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.project-hero-image {
+.project-hero-image,
+.timeline-media {
   display: flex;
+  align-items: center;
+}
+
+.project-hero-image {
   justify-content: center;
 }
 
@@ -17,17 +22,15 @@
   margin: 0 auto;
 }
 
-.timeline-media {
-  display: flex;
-  align-items: center;
+.timeline-media img,
+.multi-image {
+  width: 100%;
+  max-width: 420px;
 }
 
-.node-right .timeline-media {
-  justify-content: flex-start;
-}
-
-.node-left .timeline-media {
-  justify-content: flex-end;
+.multi-image {
+  display: grid;
+  gap: 18px;
 }
 
 .node-right .timeline-media {
@@ -48,22 +51,6 @@
   padding-right: 40px;
 }
 
-.timeline-media img,
-.multi-image {
-  width: 100%;
-  max-width: 420px;
-}
-
-.multi-image {
-  display: grid;
-  gap: 18px;
-}
-
-.multi-image img {
-  width: 100%;
-  max-width: none;
-}
-
 @media (max-width: 900px) {
   .project-hero-image img,
   .timeline-media img,
@@ -71,8 +58,16 @@
     max-width: 100%;
   }
 
-  .timeline-media {
+  .timeline-media,
+  .node-right .timeline-media,
+  .node-left .timeline-media {
     justify-content: flex-start;
+    padding: 0;
+  }
+
+  .node-right .timeline-copy,
+  .node-left .timeline-copy {
+    padding: 0;
   }
 }
 </style>
@@ -110,7 +105,7 @@
         <img src="images/uc26-rack-pinion-2.png" alt="custom rack and pinion housing assembly with shaft and bushing callouts">
       </div>
       <div class="timeline-side timeline-copy">
-        <div class="timeline-content project-card">
+        <div class="project-card">
           <h3>rack and pinion housing</h3>
           <p>custom steering housing designed around manufacturability and subsystem packaging. the housing was manually milled from aluminum and integrated with a hand-lathed shaft and 3d printed bushings to support the pinion assembly and rack travel.</p>
         </div>
@@ -119,17 +114,23 @@
 
     <article class="timeline-node node-left">
       <div class="timeline-side timeline-copy">
-        <div class="timeline-content project-card">
+        <div class="project-card">
           <h3>autonomous braking system</h3>
           <p>compact braking actuation package integrating a gearbox, bearings, electromagnetic clutch, and 3d printed motor mount. the assembly was designed to deliver controlled braking through a toleranced packaged system with serviceable components.</p>
         </div>
       </div>
       <div class="timeline-side timeline-media">
-        <img class="timeline-image-wide" src="images/uc26-autobrake.png" alt="autonomous braking system assembly with gearbox, clutch, and motor mount">
+        <img src="images/uc26-autobrake.png" alt="autonomous braking system assembly with gearbox, clutch, and motor mount">
       </div>
     </article>
   </div>
 </section>
 
 <footer>
-  <p>lin
+  <p>linkedin: <a href="https://www.linkedin.com/in/olivia-mei-23532226a/" target="_blank">olivia-mei</a></p>
+  <p>email: <a href="mailto:ojm25@cornell.edu">ojm25@cornell.edu</a></p>
+</footer>
+
+<script src="stars.js"></script>
+</body>
+</html>
