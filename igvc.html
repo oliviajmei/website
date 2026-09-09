@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>igvc</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.project-hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.project-hero-image img {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.timeline-media {
+  display: flex;
+  align-items: center;
+}
+
+.node-right .timeline-media {
+  justify-content: flex-start;
+}
+
+.node-left .timeline-media {
+  justify-content: flex-end;
+}
+
+.node-right .timeline-media {
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+.node-right .timeline-copy {
+  padding-left: 40px;
+}
+
+.node-left .timeline-media {
+  justify-content: flex-start;
+  padding-left: 40px;
+}
+
+.node-left .timeline-copy {
+  padding-right: 40px;
+}
+
+.timeline-media img,
+.multi-image {
+  width: 100%;
+  max-width: 420px;
+}
+
+.multi-image {
+  display: grid;
+  gap: 18px;
+}
+
+.multi-image img {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .project-hero-image img,
+  .timeline-media img,
+  .multi-image {
+    max-width: 100%;
+  }
+
+  .timeline-media {
+    justify-content: flex-start;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="dot-container"></div>
+
+<header>
+  <h1>olivia mei</h1>
+  <nav>
+    <a href="index.html">home</a>
+    <a href="index.html#projects">projects</a>
+  </nav>
+</header>
+
+<section class="project-hero">
+  <div class="project-hero-text">
+    <h1>igvc</h1>
+    <h2>intelligent ground vehicle competition</h2>
+    <p>mechanical design of the chassis, drivetrain, steering, and sensor packaging for an autonomous vehicle. this robot was built with the purpose of eventually scaling autonomy algorithms to the uc '26 vehicle.</p>
+  </div>
+
+  <div class="project-hero-image">
+    <img src="images/igvc-overall-robot.png" alt="overall cad of the igvc robot">
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>design timeline</h2>
+    <p>a breakdown of the major subsystems developed for the igvc platform.</p>
+  </div>
+
+  <div class="timeline timeline-alternating">
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media multi-image">
+        <img src="images/igvc-chassis-1.png" alt="igvc chassis layout with payload and battery box labels">
+        <img src="images/igvc-chassis-2.png" alt="igvc chassis with acrylic cover enclosure">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="timeline-content project-card">
+          <h3>chassis design</h3>
+          <p>built from 80/20 extrusion for modularity, rapid iteration, and straightforward subsystem integration. the chassis layout separates payload, battery, and electronics while leaving room for an acrylic enclosure and future design changes.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-node node-left">
+      <div class="timeline-side timeline-copy">
+        <div class="timeline-content project-card">
+          <h3>drivetrain</h3>
+          <p>direct drive wheel architecture using custom machined motor mounts. this layout keeps the drivetrain compact, serviceable, and easier to manufacture while supporting a clean packaging strategy inside the frame.</p>
+        </div>
+      </div>
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/igvc-drivetrain.png" alt="igvc drivetrain assembly with custom motor mounts">
+      </div>
+    </article>
+
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/igvc-steering.png" alt="igvc steering system with tie rods and custom steering knuckles">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="timeline-content project-card">
+          <h3>steering system</h3>
+          <p>ackermann-style steering with a custom rack housing, bushings, tie rods, motor mount, and steering knuckles. the assembly was designed to better reflect real vehicle steering behavior while remaining practical for student manufacturing.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-node node-left">
+      <div class="timeline-side timeline-copy">
+        <div class="timeline-content project-card">
+          <h3>sensor mounts</h3>
+          <p>3d printed mounts designed to package the zed2 camera and lidar securely on the vehicle. the mounts prioritize alignment, fast installation, and easy replacement during testing.</p>
+        </div>
+      </div>
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/igvc-sensor-mounts.png" alt="3d printed lidar and camera mounts for the igvc robot">
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <p>linkedin: <a href="https://www.linkedin.com/in/olivia-mei-23532226a/" target="_blank">olivia-mei</a></p>
+  <p>email: <a href="mailto:ojm25@cornell.edu">ojm25@cornell.edu</a></p>
+</footer>
+
+<script src="stars.js"></script>
+
+</body>
+</html>
