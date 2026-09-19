@@ -224,14 +224,14 @@ footer a:hover {
 /* dream project preview */
 .dream-preview {
   margin-top: 40px;
-  max-width: 900px;
+  max-width: 1300px;
 }
 
 .dream-preview-frame {
   display: block;
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
