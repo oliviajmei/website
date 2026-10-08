@@ -1200,7 +1200,7 @@ section h2 {
   isolation: isolate;
   display: block;
   width: min(100%, 1047px);
-  aspect-ratio: 1047 / 1280;
+  aspect-ratio: 1047 / 1536;
   margin: 0 auto;
   overflow: visible;
   border: 0;
@@ -1218,16 +1218,17 @@ section h2 {
 
 .pond-surface::before {
   inset: 0;
+  border-radius: 46px;
   background-color: #cfe2db;
   background-image: linear-gradient(145deg, rgba(194, 223, 210, 0.28), rgba(177, 211, 211, 0.24)), url("images/pond-ripples.jpg"), url("images/pond-wash.jpg");
   background-position: center, center 44%, center 50%;
   background-size: 100% 100%, cover, cover;
   background-blend-mode: normal, multiply, normal;
-  -webkit-mask-image: url("images/pond-footprint.svg");
+  -webkit-mask-image: url("images/pond-footprint.svg?v=20261008f");
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
-  mask-image: url("images/pond-footprint.svg");
+  mask-image: url("images/pond-footprint.svg?v=20261008f");
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
@@ -1266,12 +1267,13 @@ section h2 {
   position: absolute;
   z-index: 1;
   display: grid;
-  width: var(--pad-width);
-  height: var(--pad-height);
+  width: max-content;
+  height: auto;
+  aspect-ratio: 1.18;
   max-width: none;
   place-items: center;
   margin: 0;
-  padding: 0;
+  padding: 0 5px;
   overflow: visible;
   isolation: isolate;
   border: 0;
@@ -1279,6 +1281,7 @@ section h2 {
   background: transparent;
   box-shadow: none;
   text-align: center;
+  cursor: pointer;
   animation: none;
   transform: translate(-50%, -50%) rotate(var(--pad-rotation, 0deg));
 }
@@ -1295,36 +1298,35 @@ section h2 {
   height: 100%;
   object-fit: contain;
   filter: sepia(var(--pad-sepia, 0)) hue-rotate(var(--pad-hue, 0deg)) saturate(var(--pad-saturation, 1)) brightness(var(--pad-brightness, 1)) contrast(var(--pad-contrast, 1)) drop-shadow(0 14px 12px rgba(44, 79, 63, 0.2));
+  transform: scale(var(--pad-scale, 1.25));
   pointer-events: none;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .project-card.pad .pad-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: max-content;
+  position: relative;
   z-index: 1;
-  max-width: 82%;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: rgba(242, 247, 229, 0.78);
+  width: max-content;
+  max-width: none;
+  padding: 0;
+  background: transparent;
   color: #253f30;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.1;
   text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  transform: translate(-50%, -50%);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.96), 0 0 5px rgba(247, 248, 240, 0.8);
+  transform: translate(-2.5px, -2px);
+  white-space: nowrap;
 }
 
-.pad-a { left: 77%; top: 13%; --pad-width: 28%; --pad-height: 18%; --pad-rotation: -13deg; --pad-hue: -10deg; --pad-sepia: 0.06; --pad-saturation: 0.82; --pad-brightness: 1.16; --pad-contrast: 0.96; }
-.pad-b { left: 44%; top: 22%; --pad-width: 22%; --pad-height: 15%; --pad-rotation: 12deg; --pad-hue: 44deg; --pad-sepia: 0.38; --pad-saturation: 1.4; --pad-brightness: 0.8; }
-.pad-c { left: 66%; top: 27%; --pad-width: 20%; --pad-height: 14%; --pad-rotation: -17deg; --pad-hue: -12deg; --pad-sepia: 0.05; --pad-saturation: 1.35; --pad-brightness: 1.06; --pad-contrast: 1.08; }
-.pad-d { left: 25%; top: 45%; --pad-width: 25%; --pad-height: 17%; --pad-rotation: -8deg; --pad-hue: 54deg; --pad-sepia: 0.5; --pad-saturation: 1.1; --pad-brightness: 0.82; }
-.pad-e { left: 40%; top: 72%; --pad-width: 22%; --pad-height: 15%; --pad-rotation: 14deg; --pad-hue: 52deg; --pad-sepia: 0.62; --pad-saturation: 1.05; --pad-brightness: 0.9; }
-.pad-f { left: 75%; top: 47%; --pad-width: 24%; --pad-height: 16%; --pad-rotation: 19deg; --pad-hue: -16deg; --pad-sepia: 0; --pad-saturation: 1.28; --pad-brightness: 0.96; }
-.pad-g { left: 23%; top: 80%; --pad-width: 25%; --pad-height: 17%; --pad-rotation: -16deg; --pad-hue: 10deg; --pad-sepia: 0.18; --pad-saturation: 1.15; --pad-brightness: 1; }
-.pad-h { left: 64%; top: 70%; --pad-width: 22%; --pad-height: 15%; --pad-rotation: -7deg; --pad-hue: 58deg; --pad-sepia: 0.55; --pad-saturation: 1.1; --pad-brightness: 0.83; }
+.pad-a { left: 70%; top: 14%; --pad-scale: 3; --pad-rotation: -13deg; --pad-hue: -10deg; --pad-sepia: 0.06; --pad-saturation: 0.82; --pad-brightness: 1.16; --pad-contrast: 0.96; }
+.pad-b { left: 30%; top: 14%; --pad-scale: 1.45; --pad-rotation: 12deg; --pad-hue: 44deg; --pad-sepia: 0.38; --pad-saturation: 1.4; --pad-brightness: 0.8; }
+.pad-c { left: 43%; top: 17%; --pad-scale: 1.7; --pad-rotation: -17deg; --pad-hue: -12deg; --pad-sepia: 0.05; --pad-saturation: 1.35; --pad-brightness: 1.06; --pad-contrast: 1.08; }
+.pad-d { left: 20%; top: 26%; --pad-scale: 1.55; --pad-rotation: -8deg; --pad-hue: 54deg; --pad-sepia: 0.5; --pad-saturation: 1.1; --pad-brightness: 0.82; }
+.pad-e { left: 42%; top: 59%; --pad-scale: 2.1; --pad-rotation: 14deg; --pad-hue: 52deg; --pad-sepia: 0.62; --pad-saturation: 1.05; --pad-brightness: 0.9; }
+.pad-f { left: 32%; top: 51%; --pad-scale: 1.9; --pad-rotation: 19deg; --pad-hue: -16deg; --pad-sepia: 0; --pad-saturation: 1.28; --pad-brightness: 0.96; }
+.pad-g { left: 71%; top: 59%; --pad-scale: 1.35; --pad-rotation: -16deg; --pad-hue: 10deg; --pad-sepia: 0.18; --pad-saturation: 1.15; --pad-brightness: 1; }
+.pad-h { left: 80%; top: 51%; --pad-scale: 1.9; --pad-rotation: -7deg; --pad-hue: 58deg; --pad-sepia: 0.55; --pad-saturation: 1.1; --pad-brightness: 0.83; }
 
 .project-card.pad:hover {
   border: 0;
@@ -1335,7 +1337,7 @@ section h2 {
 
 .project-card.pad:hover img {
   filter: sepia(var(--pad-sepia, 0)) hue-rotate(var(--pad-hue, 0deg)) saturate(var(--pad-saturation, 1)) brightness(var(--pad-brightness, 1)) contrast(var(--pad-contrast, 1)) drop-shadow(0 20px 18px rgba(44, 79, 63, 0.3));
-  transform: scale(1.04);
+  transform: scale(var(--pad-scale, 1.25));
 }
 
 @media (max-width: 900px) {
@@ -1393,11 +1395,19 @@ section h2 {
   }
 
   .project-card.pad .pad-title {
-    width: max-content;
-    max-width: 86%;
-    min-width: 0;
-    padding: 3px 5px;
-    font-size: 11px;
-    overflow-wrap: normal;
+    padding: 0;
+  }
+
+  .pad-a { --pad-scale: 1.8; }
+  .pad-b { --pad-scale: 1.15; }
+  .pad-c { --pad-scale: 1.3; }
+  .pad-d { --pad-scale: 1.2; }
+  .pad-e { --pad-scale: 1.65; }
+  .pad-f { --pad-scale: 1.55; }
+  .pad-g { --pad-scale: 1.1; }
+  .pad-h { --pad-scale: 1.55; }
+
+  .pond-surface::before {
+    border-radius: 32px;
   }
 }
