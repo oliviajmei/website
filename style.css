@@ -28,8 +28,15 @@ h1,
 h2,
 h3,
 header h1 {
-  font-family: "Watermark", "Bentham", serif;
+  font-family: "Bentham", serif;
   font-weight: 400;
+}
+
+#home h2,
+.project-hero-text h1,
+.hero > h1,
+.trope-hero h2 {
+  font-family: "Watermark", "Bentham", serif;
 }
 
 .botanical-collage {
@@ -1319,14 +1326,14 @@ section h2 {
   white-space: nowrap;
 }
 
-.pad-a { left: 70%; top: 14%; --pad-scale: 3; --pad-rotation: -13deg; --pad-hue: -10deg; --pad-sepia: 0.06; --pad-saturation: 0.82; --pad-brightness: 1.16; --pad-contrast: 0.96; }
-.pad-b { left: 30%; top: 14%; --pad-scale: 1.45; --pad-rotation: 12deg; --pad-hue: 44deg; --pad-sepia: 0.38; --pad-saturation: 1.4; --pad-brightness: 0.8; }
-.pad-c { left: 43%; top: 17%; --pad-scale: 1.7; --pad-rotation: -17deg; --pad-hue: -12deg; --pad-sepia: 0.05; --pad-saturation: 1.35; --pad-brightness: 1.06; --pad-contrast: 1.08; }
-.pad-d { left: 20%; top: 26%; --pad-scale: 1.55; --pad-rotation: -8deg; --pad-hue: 54deg; --pad-sepia: 0.5; --pad-saturation: 1.1; --pad-brightness: 0.82; }
-.pad-e { left: 42%; top: 59%; --pad-scale: 2.1; --pad-rotation: 14deg; --pad-hue: 52deg; --pad-sepia: 0.62; --pad-saturation: 1.05; --pad-brightness: 0.9; }
-.pad-f { left: 32%; top: 51%; --pad-scale: 1.9; --pad-rotation: 19deg; --pad-hue: -16deg; --pad-sepia: 0; --pad-saturation: 1.28; --pad-brightness: 0.96; }
-.pad-g { left: 71%; top: 59%; --pad-scale: 1.35; --pad-rotation: -16deg; --pad-hue: 10deg; --pad-sepia: 0.18; --pad-saturation: 1.15; --pad-brightness: 1; }
-.pad-h { left: 80%; top: 51%; --pad-scale: 1.9; --pad-rotation: -7deg; --pad-hue: 58deg; --pad-sepia: 0.55; --pad-saturation: 1.1; --pad-brightness: 0.83; }
+.pad-a { left: 70%; top: 28%; --pad-scale: 3; --pad-rotation: -13deg; --pad-hue: -10deg; --pad-sepia: 0.06; --pad-saturation: 0.82; --pad-brightness: 1.16; --pad-contrast: 0.96; }
+.pad-b { left: 30%; top: 28%; --pad-scale: 1.45; --pad-rotation: 12deg; --pad-hue: 44deg; --pad-sepia: 0.38; --pad-saturation: 1.4; --pad-brightness: 0.8; }
+.pad-c { left: 43%; top: 31%; --pad-scale: 1.7; --pad-rotation: -17deg; --pad-hue: -12deg; --pad-sepia: 0.05; --pad-saturation: 1.35; --pad-brightness: 1.06; --pad-contrast: 1.08; }
+.pad-d { left: 28%; top: 40%; --pad-scale: 1.55; --pad-rotation: -8deg; --pad-hue: 54deg; --pad-sepia: 0.5; --pad-saturation: 1.1; --pad-brightness: 0.82; }
+.pad-e { left: 42%; top: 73%; --pad-scale: 2.1; --pad-rotation: 14deg; --pad-hue: 52deg; --pad-sepia: 0.62; --pad-saturation: 1.05; --pad-brightness: 0.9; }
+.pad-f { left: 32%; top: 65%; --pad-scale: 1.9; --pad-rotation: 19deg; --pad-hue: -16deg; --pad-sepia: 0; --pad-saturation: 1.28; --pad-brightness: 0.96; }
+.pad-g { left: 71%; top: 73%; --pad-scale: 1.35; --pad-rotation: -16deg; --pad-hue: 10deg; --pad-sepia: 0.18; --pad-saturation: 1.15; --pad-brightness: 1; }
+.pad-h { left: 64%; top: 65%; --pad-scale: 1.9; --pad-rotation: -7deg; --pad-hue: 58deg; --pad-sepia: 0.55; --pad-saturation: 1.1; --pad-brightness: 0.83; }
 
 .project-card.pad:hover {
   border: 0;
