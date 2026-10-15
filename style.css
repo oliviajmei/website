@@ -1135,6 +1135,86 @@ section h2 {
   opacity: 0.9;
 }
 
+/* uc27 driveshaft project */
+.driveshaft-parameters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+}
+
+.driveshaft-card {
+  display: block;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(75, 101, 78, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #293d32;
+}
+
+.driveshaft-parameters .driveshaft-card {
+  margin-bottom: 0;
+}
+
+.driveshaft-parameters h3,
+.driveshaft-explanation h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.driveshaft-parameters p,
+.driveshaft-explanation p {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.driveshaft-figure {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+}
+
+.driveshaft-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.driveshaft-figure figcaption {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.driveshaft-analysis {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+  max-width: 1200px;
+}
+
+.driveshaft-explanation {
+  margin-bottom: 0;
+}
+
+.driveshaft-explanation p + p {
+  margin-top: 14px;
+}
+
+.driveshaft-explanation .driveshaft-caveat {
+  border-top: 1px solid rgba(233, 247, 252, 0.2);
+  margin-top: 20px;
+  padding-top: 16px;
+  font-size: 14px;
+  opacity: 0.72;
+}
+
 @media (max-width: 900px) {
   .project-hero {
     padding-top: 140px;
@@ -1177,6 +1257,10 @@ section h2 {
   .node-left .timeline-copy .project-card {
     margin-left: 0;
     max-width: 100%;
+  }
+
+  .driveshaft-analysis {
+    grid-template-columns: 1fr;
   }
 }
 

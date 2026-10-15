@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>uc27 - driveshaft</title>
-<link rel="stylesheet" href="style.css?v=centered-20261009a">
+<link rel="stylesheet" href="style.css?v=uc27-driveshaft-20261015a">
 </head>
 <body>
 
@@ -22,7 +22,85 @@
   <div class="project-hero-text">
     <h1>uc27 - driveshaft</h1>
     <h2>cornell electric vehicles urban concept '27</h2>
-    <p>design pending...</p>
+    <p>designing a driveshaft to transmit motor power to the wheels while carrying the expected loads and integrating with the output shaft, support block, and wheel hub. the project emphasizes sound geometry, gd&amp;t, and design for assembly.</p>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>design parameters</h2>
+    <p>the main requirements guiding the preliminary layout and analysis.</p>
+  </div>
+
+  <div class="driveshaft-parameters">
+    <article class="driveshaft-card">
+      <h3>power transmission</h3>
+      <p>transmit power from the motor/output shaft to the wheels.</p>
+    </article>
+    <article class="driveshaft-card">
+      <h3>load-carrying geometry</h3>
+      <p>select geometry that can withstand the required forces and moments.</p>
+    </article>
+    <article class="driveshaft-card">
+      <h3>interfaces</h3>
+      <p>fit and function properly with the output shaft, support block, and wheel hub.</p>
+    </article>
+    <article class="driveshaft-card">
+      <h3>gd&amp;t and assembly</h3>
+      <p>emphasize geometric dimensioning and tolerancing (gd&amp;t) and design for assembly (dfa).</p>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>preliminary concept</h2>
+    <p>an early stepped-shaft layout showing the packaging and connection features to be developed.</p>
+  </div>
+
+  <figure class="driveshaft-figure driveshaft-card">
+    <img src="images/uc27-driveshaft-concept.png" alt="early driveshaft concept in side and top views, showing stepped sections and threaded ends" loading="lazy">
+    <figcaption>early side and top views of the concept. the stepped diameters and threaded ends are preliminary and will be refined with the interface and tolerance requirements.</figcaption>
+  </figure>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>hand calculations</h2>
+    <p>a first-pass free-body and bending-stress check to estimate the loads on the shaft.</p>
+  </div>
+
+  <div class="driveshaft-analysis">
+    <figure class="driveshaft-figure driveshaft-card">
+      <img src="images/uc27-driveshaft-hand-calculations.png" alt="handwritten driveshaft free-body diagram and calculations for forces, reactions, bending moment, and material stress" loading="lazy">
+      <figcaption>hand calculations for the wheel and chain loads, support reactions, combined bending moment, and an initial material comparison.</figcaption>
+    </figure>
+    <article class="driveshaft-card driveshaft-explanation">
+      <h3>what the estimates show</h3>
+      <p>the shaft is approximated as a beam supported at the bearing/support locations. the free-body diagram includes a wheel bump force and a sprocket chain load, and the equations estimate the reactions at the supports.</p>
+      <p>the page estimates a wheel moment of about <strong>99.8 n·m</strong>, a chain force of about <strong>341 n</strong>, and a combined bending moment of about <strong>364 n·m</strong>. from that bending estimate, the calculated bending stress is about <strong>237 mpa</strong>.</p>
+      <p>the material comparison gives an approximate yield safety factor of <strong>1.16 for 6061-t6 aluminum</strong> and <strong>2.24 for 1045 carbon steel</strong>, using the yield strengths noted in the calculation.</p>
+      <p class="driveshaft-caveat">these are preliminary estimates based on the shown assumptions and dimensions, not a final design validation. load cases, stress concentrations, fatigue, deflection, material condition, and the support/interface assumptions still need to be checked.</p>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>ansys stallout torque case</h2>
+    <p>this is the stallout torque load case currently being set up to run in ansys.</p>
+  </div>
+
+  <div class="driveshaft-analysis">
+    <figure class="driveshaft-figure driveshaft-card">
+      <img src="images/uc27-driveshaft-ansys-stallout.png" alt="preliminary ansys static structural model of the driveshaft with conical contacts, chain force, normal force, and chain moment" loading="lazy">
+      <figcaption>preliminary ansys static structural setup for the driveshaft assembly and applied load locations.</figcaption>
+    </figure>
+    <article class="driveshaft-card driveshaft-explanation">
+      <h3>stallout torque loading setup</h3>
+      <p>the model is being prepared in ansys to run the stallout torque case. the setup labels a <strong>341 n chain force</strong>, a <strong>696 n normal force</strong>, and a <strong>364.07 n·m chain moment</strong>, with conical contact regions identified in the assembly.</p>
+      <p class="driveshaft-caveat">this screenshot documents the load setup; it is not a solved stress or deformation result. the model still needs to run, then its results can be checked against the design requirements.</p>
+    </article>
   </div>
 </section>
 
