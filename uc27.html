@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>uc27 - driveshaft</title>
-<link rel="stylesheet" href="style.css?v=uc27-driveshaft-20261109d">
+<link rel="stylesheet" href="style.css?v=uc27-driveshaft-20261109e">
 </head>
 <body class="uc27-page">
 
@@ -178,11 +178,15 @@
         <div class="project-card">
           <h3>probing one-way reaction forces</h3>
           <p>i probed the reaction forces at the one-way clutches in the combined stall-torque and bumping-and-cornering simulation. these measured forces became the inputs for the second ANSYS load case, rather than estimating the one-way loads separately.</p>
+          <h4>checking bump-load distribution</h4>
           <p>i also modeled the bump load acting directly at the wheel. because the hub is symmetric, that load should be shared across the one-way clutches, and this case produced less angular deflection than the uneven reaction-force distribution. i retained the higher-deflection, uneven-load case as the conservative alignment check.</p>
+          <h4>probing conical-bearing deflection</h4>
+          <p>paired probes at the conical-bearing interfaces track relative displacement in the reaction-force model, allowing me to assess angular misalignment rather than only maximum shaft deformation.</p>
         </div>
       </div>
-      <div class="timeline-side timeline-media">
+      <div class="timeline-side timeline-media multi-image">
         <img class="timeline-image-wide" src="images/uc27-ansys-mesh-load-sharing.png" alt="Meshed driveshaft models illustrating the one-way clutch regions and bump-load direction for load-sharing analysis" loading="lazy">
+        <img class="timeline-image-wide" src="images/uc27-ansys-conical-deflection-probes.png" alt="Two ANSYS driveshaft models with deformation probes placed at the conical-bearing regions" loading="lazy">
       </div>
     </article>
 
@@ -195,18 +199,6 @@
       </div>
       <div class="timeline-side timeline-media">
         <img class="timeline-image-wide" src="images/uc27-ansys-reaction-force-setup.png" alt="ANSYS driveshaft model with probed reaction forces applied at the one-way interfaces" loading="lazy">
-      </div>
-    </article>
-
-    <article class="timeline-node node-right">
-      <div class="timeline-side timeline-media">
-        <img class="timeline-image-wide" src="images/uc27-ansys-conical-deflection-probes.png" alt="Two ANSYS driveshaft models with deformation probes placed at the conical-bearing regions" loading="lazy">
-      </div>
-      <div class="timeline-side timeline-copy">
-        <div class="project-card">
-          <h3>probing conical-bearing deflection</h3>
-          <p>the paired probe locations capture displacement at the conical-bearing interfaces in the reaction-force model. comparing these locations focuses the assessment on relative movement and angular misalignment, rather than only the shaft's maximum total deformation.</p>
-        </div>
       </div>
     </article>
 
