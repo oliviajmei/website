@@ -1230,8 +1230,7 @@ body.uc27-page .timeline-intro h2 {
 
 body.uc27-page .timeline-copy .project-card {
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.82);
-  background-image: none;
+  background: #fff;
   box-shadow: none;
 }
 
@@ -1240,8 +1239,8 @@ body.uc27-page .timeline-copy .project-card::before {
 }
 
 body.uc27-page .timeline-copy .project-card:hover {
-  background-color: #fff;
-  box-shadow: 0 8px 18px rgba(52, 89, 76, 0.12);
+  background: #fff;
+  box-shadow: none;
 }
 
 body.uc27-page .force-probe-note {
