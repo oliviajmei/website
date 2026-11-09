@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>uc27 - driveshaft</title>
 <link rel="stylesheet" href="style.css?v=uc27-driveshaft-20261015a">
+<style>
+.architecture-figure {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.architecture-figure img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.architecture-figure figcaption {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+</style>
 </head>
 <body>
 
@@ -22,8 +41,19 @@
   <div class="project-hero-text">
     <h1>uc27 - driveshaft</h1>
     <h2>cornell electric vehicles urban concept '27</h2>
-    <p>designing a driveshaft to transmit motor power to the wheels while carrying the expected loads and integrating with the output shaft, support block, and wheel hub. the project emphasizes sound geometry, gd&amp;t, and design for assembly.</p>
+    <p>driveshaft design and structural analysis for the Cornell Electric Vehicles Urban Concept '27 vehicle. the shaft was first evaluated in 7075 aluminum, then refined in 6061 to reduce cost and weight while maintaining acceptable strength and alignment at the conical bearings.</p>
   </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>drivetrain architecture</h2>
+    <p>how the driveshaft integrates with the UC '27 powertrain, wheel, and supporting structure.</p>
+  </div>
+  <figure class="architecture-figure">
+    <img src="images/uc27-drivetrain-architecture.png" alt="Exploded UC '27 drivetrain architecture showing the motor, chain and sprocket, support block, sandwich plates, mounting structure, RPM sensor, driveshaft, brake caliper and rotor, wheel hub and rotor mount, and wheel">
+    <figcaption>the driveshaft connects the motor and chain drive to the wheel assembly, running through the support block and mounting structure and interfacing with the wheel hub and brake rotor. the diagram also shows the surrounding brake, sensing, and structural components designed across the connected subsystems.</figcaption>
+  </figure>
 </section>
 
 <section class="timeline-section project-timeline-section">
@@ -88,7 +118,7 @@
 <section class="timeline-section project-timeline-section">
   <div class="timeline-intro">
     <h2>ansys stallout torque case</h2>
-    <p>this is the stallout torque load case currently being set up to run in ansys.</p>
+    <p>the stallout torque load case was an early setup for the structural analysis.</p>
   </div>
 
   <div class="driveshaft-analysis">
@@ -98,8 +128,121 @@
     </figure>
     <article class="driveshaft-card driveshaft-explanation">
       <h3>stallout torque loading setup</h3>
-      <p>the model is being prepared in ansys to run the stallout torque case. the setup labels a <strong>341 n chain force</strong>, a <strong>696 n normal force</strong>, and a <strong>364.07 n·m chain moment</strong>, with conical contact regions identified in the assembly.</p>
-      <p class="driveshaft-caveat">this screenshot documents the load setup; it is not a solved stress or deformation result. the model still needs to run, then its results can be checked against the design requirements.</p>
+      <p>the setup labels a <strong>341 n chain force</strong>, a <strong>696 n normal force</strong>, and a <strong>364.07 n·m chain moment</strong>, with conical contact regions identified in the assembly. the initial analysis below documents the first high-load cases before the load-transfer method was refined.</p>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>driveshaft structural analysis</h2>
+    <p>first-pass ANSYS static structural setups and deformation results. this initial approach was later revised to better represent how loads are shared through the drivetrain.</p>
+  </div>
+
+  <div class="timeline timeline-alternating">
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-case-1-setup.png" alt="ANSYS driveshaft load case 1 showing supports and applied forces" loading="lazy">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>load case 1 | setup</h3>
+          <p>the first load case applies the expected reaction forces to the driveshaft. the one-way clutches are oriented toward the applied force and modeled as supports to represent how the system reacts at those interfaces.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-node node-left">
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>load case 2 | setup</h3>
+          <p>the second high-load case was analyzed separately, using the same support approach: one-way clutches facing the load are constrained as supports, and the corresponding reaction forces are applied to the shaft system.</p>
+        </div>
+      </div>
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-case-2-setup.png" alt="ANSYS driveshaft load case 2 showing supports and applied forces" loading="lazy">
+      </div>
+    </article>
+
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-bump-cornering-deformation.png" alt="ANSYS total deformation plot for the driveshaft under bumping and cornering loads, with a maximum of 0.5372 millimeters" loading="lazy">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>bumping + cornering | total deformation</h3>
+          <p>this first-pass bumping-and-cornering result showed a maximum total deformation of 0.5372 mm. although the factor of safety was favorable, angular deflection at the conical-bearing interfaces remained a concern. further review showed that this model assumed the conicals carried the full combined load at once, so a revised load-transfer method was needed for a more representative deflection estimate.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>refining the load model</h2>
+    <p>combined-load analysis, reaction-force transfer, and a material comparison helped evaluate bearing alignment under both conservative and representative load distributions.</p>
+  </div>
+
+  <div class="timeline timeline-alternating">
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-combined-load-setup.png" alt="ANSYS setup combining stall torque and bumping-and-cornering loads on the driveshaft" loading="lazy">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>combined stall + bump loading</h3>
+          <p>to improve on the separate initial cases, i combined the stall-torque and bumping-and-cornering loads in one model. after solving, i probed the one-way clutch reaction forces rather than assuming the conical bearings carried the entire combined load simultaneously.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-node node-left">
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>transferring the reaction forces</h3>
+          <p>i used the probed one-way reactions as inputs to a second, flipped setup: the one-way interfaces were constrained and their measured forces applied to the shaft. i then probed deformation at the conical-bearing locations to estimate relative angular deflection from the resulting displacement.</p>
+        </div>
+      </div>
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-reaction-force-setup.png" alt="ANSYS driveshaft model with probed reaction forces applied at the one-way interfaces" loading="lazy">
+      </div>
+    </article>
+
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-conical-deflection-probes.png" alt="Two ANSYS driveshaft models with deformation probes placed at the conical-bearing regions" loading="lazy">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>probing conical-bearing deflection</h3>
+          <p>the paired probe locations capture displacement at the conical-bearing interfaces in the reaction-force model. comparing these locations focuses the assessment on relative movement and angular misalignment, rather than only the shaft's maximum total deformation.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="timeline-node node-left">
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>checking the bump-load distribution</h3>
+          <p>i also modeled the bump load acting directly at the wheel. because the hub is symmetric, that load should be shared across the one-way clutches, and this case produced less angular deflection than the uneven reaction-force distribution. i retained the higher-deflection, uneven-load case as the conservative alignment check.</p>
+        </div>
+      </div>
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-mesh-load-sharing.png" alt="Meshed driveshaft models illustrating the one-way clutch regions and bump-load direction for load-sharing analysis" loading="lazy">
+      </div>
+    </article>
+
+    <article class="timeline-node node-right">
+      <div class="timeline-side timeline-media">
+        <img class="timeline-image-wide" src="images/uc27-ansys-6061-safety-factor.png" alt="ANSYS safety-factor result for the 6061 aluminum driveshaft, showing a minimum value of 1.2517" loading="lazy">
+      </div>
+      <div class="timeline-side timeline-copy">
+        <div class="project-card">
+          <h3>material refinement | 7075 to 6061</h3>
+          <p>after confirming the 7075 design against the conservative deflection case and stress requirements, i evaluated 6061 aluminum as a lower-cost, lighter material. the 6061 model maintained acceptable bearing alignment and strength. its safety-factor plot shows a minimum of 1.2517; after reviewing the localized result, i determined it was not representative of a governing design concern and proceeded with the design.</p>
+        </div>
+      </div>
     </article>
   </div>
 </section>
