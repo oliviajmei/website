@@ -5,25 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>uc27 - driveshaft</title>
 <link rel="stylesheet" href="style.css?v=uc27-driveshaft-20261015a">
-<style>
-.architecture-figure {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.architecture-figure img {
-  width: 100%;
-  border-radius: 12px;
-  display: block;
-}
-
-.architecture-figure figcaption {
-  margin-top: 16px;
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.85;
-}
-</style>
 </head>
 <body>
 
@@ -41,19 +22,8 @@
   <div class="project-hero-text">
     <h1>uc27 - driveshaft</h1>
     <h2>cornell electric vehicles urban concept '27</h2>
-    <p>driveshaft design and structural analysis for the Cornell Electric Vehicles Urban Concept '27 vehicle. the shaft was first evaluated in 7075 aluminum, then refined in 6061 to reduce cost and weight while maintaining acceptable strength and alignment at the conical bearings.</p>
+    <p>designing a driveshaft to transmit motor power to the wheels while carrying the expected loads and integrating with the output shaft, support block, and wheel hub. the project emphasizes sound geometry, gd&amp;t, and design for assembly.</p>
   </div>
-</section>
-
-<section class="timeline-section project-timeline-section">
-  <div class="timeline-intro">
-    <h2>drivetrain architecture</h2>
-    <p>how the driveshaft integrates with the UC '27 powertrain, wheel, and supporting structure.</p>
-  </div>
-  <figure class="architecture-figure">
-    <img src="images/uc27-drivetrain-architecture.png" alt="Exploded UC '27 drivetrain architecture showing the motor, chain and sprocket, support block, sandwich plates, mounting structure, RPM sensor, driveshaft, brake caliper and rotor, wheel hub and rotor mount, and wheel">
-    <figcaption>the driveshaft connects the motor and chain drive to the wheel assembly, running through the support block and mounting structure and interfacing with the wheel hub and brake rotor. the diagram also shows the surrounding brake, sensing, and structural components designed across the connected subsystems.</figcaption>
-  </figure>
 </section>
 
 <section class="timeline-section project-timeline-section">
@@ -118,7 +88,7 @@
 <section class="timeline-section project-timeline-section">
   <div class="timeline-intro">
     <h2>ansys stallout torque case</h2>
-    <p>the stallout torque load case was an early setup for the structural analysis.</p>
+    <p>this is the stallout torque load case currently being set up to run in ansys.</p>
   </div>
 
   <div class="driveshaft-analysis">
@@ -128,7 +98,8 @@
     </figure>
     <article class="driveshaft-card driveshaft-explanation">
       <h3>stallout torque loading setup</h3>
-      <p>the setup labels a <strong>341 n chain force</strong>, a <strong>696 n normal force</strong>, and a <strong>364.07 n·m chain moment</strong>, with conical contact regions identified in the assembly. the initial analysis below documents the first high-load cases before the load-transfer method was refined.</p>
+      <p>the model is being prepared in ansys to run the stallout torque case. the setup labels a <strong>341 n chain force</strong>, a <strong>696 n normal force</strong>, and a <strong>364.07 n·m chain moment</strong>, with conical contact regions identified in the assembly.</p>
+      <p class="driveshaft-caveat">this screenshot documents the load setup; it is not a solved stress or deformation result. the model still needs to run, then its results can be checked against the design requirements.</p>
     </article>
   </div>
 </section>
@@ -245,6 +216,17 @@
       </div>
     </article>
   </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>drivetrain architecture</h2>
+    <p>how the driveshaft integrates with the UC '27 powertrain, wheel, and supporting structure.</p>
+  </div>
+  <figure class="driveshaft-figure driveshaft-card">
+    <img src="images/uc27-drivetrain-architecture.png" alt="Exploded UC '27 drivetrain architecture showing the motor, chain and sprocket, support block, sandwich plates, mounting structure, RPM sensor, driveshaft, brake caliper and rotor, wheel hub and rotor mount, and wheel" loading="lazy">
+    <figcaption>the driveshaft connects the motor and chain drive to the wheel assembly, running through the support block and mounting structure and interfacing with the wheel hub and brake rotor. the diagram also shows the surrounding brake, sensing, and structural components designed across the connected subsystems.</figcaption>
+  </figure>
 </section>
 
 <footer>
