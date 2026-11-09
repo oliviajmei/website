@@ -1224,6 +1224,31 @@ section h2 {
   opacity: 0.72;
 }
 
+body.uc27-page .timeline-intro h2 {
+  font-size: 36px;
+}
+
+body.uc27-page .timeline-copy .project-card {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.82);
+  background-image: none;
+  box-shadow: none;
+}
+
+body.uc27-page .timeline-copy .project-card::before {
+  content: none;
+}
+
+body.uc27-page .timeline-copy .project-card:hover {
+  background-color: #fff;
+  box-shadow: 0 8px 18px rgba(52, 89, 76, 0.12);
+}
+
+body.uc27-page .force-probe-note {
+  max-width: 1200px;
+  margin: 0 0 64px;
+}
+
 @media (max-width: 900px) {
   .project-hero {
     padding-top: 140px;
@@ -1322,7 +1347,7 @@ section h2 {
   background-color: #cfe2db;
   background-image: linear-gradient(145deg, rgba(194, 223, 210, 0.28), rgba(177, 211, 211, 0.24)), url("images/pond-ripples.jpg"), url("images/pond-wash.jpg");
   background-position: center, center 44%, center 50%;
-  background-size: 100% 100%, cover, cover;
+  background-size: 100% 100%, 100% 100%, 100% 100%;
   background-blend-mode: normal, multiply, normal;
   -webkit-mask-image: url("images/pond-footprint.svg?v=20261008f");
   -webkit-mask-position: center;

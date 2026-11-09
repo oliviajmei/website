@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>uc27 - driveshaft</title>
-<link rel="stylesheet" href="style.css?v=uc27-driveshaft-20261015a">
+<link rel="stylesheet" href="style.css?v=uc27-driveshaft-20261109b">
 </head>
-<body>
+<body class="uc27-page">
 
 <div id="dot-container"></div>
 
@@ -173,11 +173,16 @@
       </div>
     </article>
 
+    <article class="driveshaft-card driveshaft-explanation force-probe-note">
+      <h3>probing one-way reaction forces</h3>
+      <p>i probed the reaction forces at the one-way clutches in the combined stall-torque and bumping-and-cornering simulation. these measured forces became the inputs for the second ANSYS load case, rather than estimating the one-way loads separately.</p>
+    </article>
+
     <article class="timeline-node node-left">
       <div class="timeline-side timeline-copy">
         <div class="project-card">
-          <h3>transferring the reaction forces</h3>
-          <p>i used the probed one-way reactions as inputs to a second, flipped setup: the one-way interfaces were constrained and their measured forces applied to the shaft. i then probed deformation at the conical-bearing locations to estimate relative angular deflection from the resulting displacement.</p>
+          <h3>second load case | applying probed forces</h3>
+          <p>for the second, flipped setup, i constrained the one-way interfaces and applied the reaction forces measured in the combined-load simulation. i then probed deformation at the conical-bearing locations to estimate relative angular deflection from the resulting displacement.</p>
         </div>
       </div>
       <div class="timeline-side timeline-media">
