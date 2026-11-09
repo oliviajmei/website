@@ -1324,7 +1324,8 @@ body.uc27-page .force-probe-note {
   position: relative;
   isolation: isolate;
   display: block;
-  width: min(100%, 1047px);
+  grid-column: 1 / -1;
+  width: min(100%, 1200px);
   aspect-ratio: 1047 / 1280;
   margin: 0 auto;
   overflow: visible;
