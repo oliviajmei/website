@@ -1444,3 +1444,43 @@ body.uc27-page .timeline-copy .project-card:hover {
     border-radius: 32px;
   }
 }
+
+/* hydraulic autobrake page: uniform four-column card grid */
+.autobrake-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.autobrake-grid > * {
+  grid-column: span 1;
+  margin: 0;
+}
+
+.autobrake-grid > .driveshaft-explanation,
+.autobrake-grid > .driveshaft-figure {
+  grid-column: span 2;
+}
+
+.autobrake-grid > .driveshaft-figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .autobrake-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .autobrake-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .autobrake-grid > .driveshaft-explanation,
+  .autobrake-grid > .driveshaft-figure {
+    grid-column: span 1;
+  }
+}

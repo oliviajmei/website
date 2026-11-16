@@ -6,7 +6,7 @@
 <title>hydraulic autobrake | olivia mei</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="autobrake-page">
 
 <header>
   <h1><a href="index.html">olivia mei</a></h1>
@@ -30,7 +30,7 @@
     <p>why the previous approach is being replaced.</p>
   </div>
 
-  <div class="driveshaft-analysis">
+  <div class="driveshaft-parameters autobrake-grid">
     <article class="driveshaft-card driveshaft-explanation">
       <h3>everything autonomous must be removable</h3>
       <p>shell eco-marathon is an efficiency competition, and level 3 autonomy is a separate goal set by the team. every system added to make the vehicle autonomous therefore has to be <strong>easily removable</strong>.</p>
@@ -48,7 +48,7 @@
     <p>the requirements guiding the design.</p>
   </div>
 
-  <div class="driveshaft-parameters">
+  <div class="driveshaft-parameters autobrake-grid">
     <article class="driveshaft-card">
       <h3>fully modular</h3>
       <p>easily removed and attached to the vehicle.</p>
@@ -74,17 +74,16 @@
     <p>working through the braking calculations to find how much pressure is required for full braking.</p>
   </div>
 
-  <div class="driveshaft-analysis">
+  <div class="driveshaft-parameters autobrake-grid">
     <figure class="driveshaft-figure driveshaft-card">
       <img src="images/hydraulic-autobrake/braking-hand-calcs.jpg" alt="handwritten braking calculations from stopping deceleration through braking force, wheel torque, caliper force, and required hydraulic pressure" loading="lazy">
-      <figcaption>braking calcs, from stopping distance to the pressure the hydraulic fluid needs to produce.</figcaption>
+    <figcaption>braking calcs, from stopping distance to the pressure the hydraulic fluid needs to produce.</figcaption>
     </figure>
     <article class="driveshaft-card driveshaft-explanation">
       <h3>what the estimates show</h3>
       <p>stopping from 10 m/s in 20 m needs a deceleration of about <strong>2.5 m/s&sup2;</strong>. with the vehicle mass used in the calculation, that requires a total braking force of about <strong>437.5 n</strong>, or about <strong>109.4 n</strong> per wheel assuming an even split.</p>
       <p>that force acts at the wheel edge, giving a brake torque of about <strong>31.7 n&middot;m</strong> per wheel. with a friction coefficient of 0.5 and a 0.105 m effective radius, the calipers must clamp with about <strong>604 n</strong> total, or <strong>302 n</strong> per pad with two pads.</p>
-      <p>dividing by the pad area gives the pressure the hydraulic fluid has to produce: about <strong>473 kpa</strong>.</p>
-      <p class="driveshaft-caveat">open question from the notes: whether to follow the same stopping parameters set by the competition rules for the autobraking system.</p>
+      <p>dividing by the pad area gives the pressure the hydraulic fluid has to produce: about <strong>473 kpa (about 68.6 psi)</strong>.</p>
     </article>
   </div>
 </section>
@@ -107,7 +106,7 @@
     <p>talking with people experienced with valves to refine the design.</p>
   </div>
 
-  <div class="driveshaft-analysis">
+  <div class="driveshaft-parameters autobrake-grid">
     <article class="driveshaft-card driveshaft-explanation">
       <h3>advice from the cornell rocketry propulsion lead</h3>
       <p>i met with the propulsion lead of cornell rocketry and asked about their experience, recommendations, redundancies, and how to spec various parts. what i took away:</p>
@@ -132,7 +131,7 @@
   <div class="timeline-intro">
     <h2>additional hand calculations</h2>
   </div>
-  <div class="driveshaft-parameters">
+  <div class="driveshaft-parameters autobrake-grid">
     <article class="driveshaft-card">
       <h3>pump</h3>
       <p>calculations for sizing the pump.</p>
