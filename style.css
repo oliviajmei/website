@@ -35,7 +35,7 @@ header h1 {
 #home h2,
 .project-hero-text h1,
 .hero > h1,
-.trope-hero h2 {
+.stub-hero h2 {
   font-family: "Watermark", "Bentham", serif;
 }
 
@@ -685,7 +685,7 @@ section h2 {
   background: linear-gradient(to top, rgba(40, 61, 48, 0.9), rgba(40, 61, 48, 0));
 }
 
-.trope-hero {
+.stub-hero {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -694,13 +694,13 @@ section h2 {
   background: radial-gradient(ellipse at 85% 42%, rgba(246, 221, 225, 0.46), transparent 24rem);
 }
 
-.trope-hero h2 {
+.stub-hero h2 {
   margin: 12px 0;
   font-size: 64px;
   font-weight: 400;
 }
 
-.trope-hero p:not(.eyebrow) {
+.stub-hero p:not(.eyebrow) {
   max-width: 520px;
   color: #526454;
   font-size: 24px;
@@ -723,7 +723,7 @@ section h2 {
 
 @media (max-width: 900px) {
   #home,
-  .trope-hero {
+  .stub-hero {
     padding-inline: 40px;
   }
 
@@ -761,7 +761,7 @@ section h2 {
   }
 
   #home,
-  .trope-hero {
+  .stub-hero {
     display: flex;
     padding: 150px 24px 72px;
   }
@@ -824,11 +824,11 @@ section h2 {
     margin-bottom: 10px;
   }
 
-  .trope-hero h2 {
+  .stub-hero h2 {
     font-size: 48px;
   }
 
-  .trope-hero p:not(.eyebrow) {
+  .stub-hero p:not(.eyebrow) {
     font-size: 21px;
   }
 
