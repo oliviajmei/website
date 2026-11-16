@@ -1,33 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>hydraulic autobrake | olivia mei</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-<h1><a href="index.html">olivia mei</a></h1>
-<nav>
-<a href="index.html#home">home</a>
-<a href="index.html#about">about</a>
-<a href="index.html#projects">projects</a>
-<a href="hydraulic-autobrake.html" aria-current="page">hydraulic autobrake</a>
-</nav>
+  <h1><a href="index.html">olivia mei</a></h1>
+  <nav>
+    <a href="index.html">home</a>
+    <a href="index.html#projects">projects</a>
+  </nav>
 </header>
 
-<main>
-<section class="stub-hero">
-<div>
-<p class="eyebrow">cornell electric vehicles</p>
-<h2>hydraulic autobrake</h2>
-<p>hydraulic autobraking system for the cornell electric vehicles urban concept.</p>
-<a class="back-link" href="index.html#projects">back to projects</a>
-</div>
+<section class="project-hero">
+  <div class="project-hero-text">
+    <h1>hydraulic autobrake</h1>
+    <h2>cornell electric vehicles &middot; what i'm working on right now</h2>
+    <p>unexplored territory with a 3-week implementation timeline. after running into controls and torque issues with a motor-actuated brake shaft, we're pivoting to a hydraulic autobraking system. this is our first time putting pumps and valves on the vehicle and working with an actively controlled autonomous hydraulic system.</p>
+  </div>
 </section>
-</main>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>the issue</h2>
+    <p>why the previous approach is being replaced.</p>
+  </div>
+
+  <div class="driveshaft-analysis">
+    <article class="driveshaft-card driveshaft-explanation">
+      <h3>everything autonomous must be removable</h3>
+      <p>shell eco-marathon is an efficiency competition, and level 3 autonomy is a separate goal set by the team. every system added to make the vehicle autonomous therefore has to be <strong>easily removable</strong>.</p>
+    </article>
+    <article class="driveshaft-card driveshaft-explanation">
+      <h3>why the motor design didn't work</h3>
+      <p>in previous years a motor actuated the base of the brake shaft, since that was the most modular option. we used a motor and gearbox with an electromagnetic clutch, but ran into <strong>interfacing</strong> issues between the pivoting shaft and the motor (gearbox lifting and misalignment), along with <strong>control</strong> issues. so we decided to pivot.</p>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>design parameters</h2>
+    <p>the requirements guiding the design.</p>
+  </div>
+
+  <div class="driveshaft-parameters">
+    <article class="driveshaft-card">
+      <h3>fully modular</h3>
+      <p>easily removed and attached to the vehicle.</p>
+    </article>
+    <article class="driveshaft-card">
+      <h3>works with autonomy</h3>
+      <p>integrates seamlessly with the autonomous system.</p>
+    </article>
+    <article class="driveshaft-card">
+      <h3>precise control</h3>
+      <p>precise control over braking.</p>
+    </article>
+    <article class="driveshaft-card">
+      <h3>safe operation</h3>
+      <p>operates safely.</p>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>basic hand calculations</h2>
+    <p>working through the braking calculations to find how much pressure is required for full braking.</p>
+  </div>
+
+  <div class="driveshaft-analysis">
+    <figure class="driveshaft-figure driveshaft-card">
+      <img src="images/hydraulic-autobrake/braking-hand-calcs.jpg" alt="handwritten braking calculations from stopping deceleration through braking force, wheel torque, caliper force, and required hydraulic pressure" loading="lazy">
+      <figcaption>braking calcs, from stopping distance to the pressure the hydraulic fluid needs to produce.</figcaption>
+    </figure>
+    <article class="driveshaft-card driveshaft-explanation">
+      <h3>what the estimates show</h3>
+      <p>stopping from 10 m/s in 20 m needs a deceleration of about <strong>2.5 m/s&sup2;</strong>. with the vehicle mass used in the calculation, that requires a total braking force of about <strong>437.5 n</strong>, or about <strong>109.4 n</strong> per wheel assuming an even split.</p>
+      <p>that force acts at the wheel edge, giving a brake torque of about <strong>31.7 n&middot;m</strong> per wheel. with a friction coefficient of 0.5 and a 0.105 m effective radius, the calipers must clamp with about <strong>604 n</strong> total, or <strong>302 n</strong> per pad with two pads.</p>
+      <p>dividing by the pad area gives the pressure the hydraulic fluid has to produce: about <strong>473 kpa</strong>.</p>
+      <p class="driveshaft-caveat">open question from the notes: whether to follow the same stopping parameters set by the competition rules for the autobraking system.</p>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>intuition design</h2>
+    <p>a basic circuit based on my first intuition and other online papers.</p>
+  </div>
+
+  <figure class="driveshaft-figure driveshaft-card">
+    <img src="images/hydraulic-autobrake/preliminary-system-architecture.jpg" alt="preliminary hydraulic system architecture showing brake lines on a four-wheel chassis, a master cylinder cross-section, and a circuit with isolation valve, quick connect, release valve, check valve, reservoir, pump, and pressure sensors" loading="lazy">
+    <figcaption>preliminary system architecture, with notes on how a master cylinder's inlet and compensating ports work in tandem and an open question on where to place pressure sensors for the best control-loop feedback.</figcaption>
+  </figure>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>discussion</h2>
+    <p>talking with people experienced with valves to refine the design.</p>
+  </div>
+
+  <div class="driveshaft-analysis">
+    <article class="driveshaft-card driveshaft-explanation">
+      <h3>advice from the cornell rocketry propulsion lead</h3>
+      <p>i met with the propulsion lead of cornell rocketry and asked about their experience, recommendations, redundancies, and how to spec various parts. what i took away:</p>
+      <p>operate at a relatively safe, <strong>low-pressure</strong> system.</p>
+      <p>include a <strong>passive relief valve</strong>.</p>
+      <p>talk in depth with the electrical and autonomy sub-teams to specify the <strong>pressure transducers</strong>.</p>
+    </article>
+  </div>
+</section>
+
+<section class="timeline-section project-timeline-section">
+  <div class="timeline-intro">
+    <h2>cdr system architecture</h2>
+    <p>a cdr-ready design based on those recommendations, research, and additional hand calculations.</p>
+  </div>
+
+  <figure class="driveshaft-figure driveshaft-card">
+    <img src="images/hydraulic-autobrake/cdr-system-architecture.jpg" alt="cdr hydraulic autobrake design with master cylinder, solenoid or ball valve, quick release valve, ball valves with servo, relief valve, check valve, pump, reservoir, and pressure transducer, plus a chassis layout with an autobrake unit at the front and rear" loading="lazy">
+    <figcaption>the autobrake is placed as close to the calipers as possible, with the pressure transducer as close as possible to the calipers as well.</figcaption>
+  </figure>
+
+  <div class="timeline-intro">
+    <h2>additional hand calculations</h2>
+  </div>
+  <div class="driveshaft-parameters">
+    <article class="driveshaft-card">
+      <h3>pump</h3>
+      <p>calculations for sizing the pump.</p>
+    </article>
+    <article class="driveshaft-card">
+      <h3>passive relief valve</h3>
+      <p>calculations to verify the passive relief valve limits.</p>
+    </article>
+  </div>
+</section>
 
 <footer>
 <p>linkedin: <a href="https://www.linkedin.com/in/olivia-mei-23532226a/" target="_blank" rel="noopener">olivia-mei</a></p>

@@ -420,6 +420,16 @@ nav a:focus-visible::after {
   animation: rise-in 0.8s ease both;
 }
 
+.home-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-links .home-link + .home-link {
+  margin-top: 12px;
+}
+
 .home-link {
   display: inline-flex;
   align-items: center;
