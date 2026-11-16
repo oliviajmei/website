@@ -3,10 +3,10 @@
   collage.className = "botanical-collage";
   collage.setAttribute("aria-hidden", "true");
   collage.innerHTML = `
-    <img class="botanical-layer lotus" src="images/lotus-veins.jpg" alt="">
-    <img class="botanical-layer vine" src="images/climbing-vine.jpg" alt="">
-    <img class="botanical-layer birds" src="images/botanical-birds.jpg" alt="">
-    <img class="botanical-layer koi" src="images/koi-watercolor.jpg" alt="">`;
+    <img class="botanical-layer lotus" src="images/pond/lotus-veins.jpg" alt="">
+    <img class="botanical-layer vine" src="images/pond/climbing-vine.jpg" alt="">
+    <img class="botanical-layer birds" src="images/pond/botanical-birds.jpg" alt="">
+    <img class="botanical-layer koi" src="images/pond/koi-watercolor.jpg" alt="">`;
   document.body.prepend(collage);
 
   const vine = document.createElement("aside");
@@ -21,7 +21,7 @@
       const side = index % 2 === 0 ? "left" : "right";
       const top = 8 + index * (84 / 7);
       const threshold = (index + 1) / 9;
-      return `<span class="growth-leaf ${side}" data-threshold="${threshold}" style="top:${top}%"><img src="images/lotus-veins.jpg" alt=""></span>`;
+      return `<span class="growth-leaf ${side}" data-threshold="${threshold}" style="top:${top}%"><img src="images/pond/lotus-veins.jpg" alt=""></span>`;
     }).join("")}`;
   document.body.append(vine);
 
